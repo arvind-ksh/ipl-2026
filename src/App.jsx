@@ -30,36 +30,82 @@ const SQUADS = {
 };
 
 const SCHEDULE = [
-  { id:1,  date:"Mar 28", team1:"RCB",  team2:"SRH",  venue:"M. Chinnaswamy Stadium, Bengaluru",             result:{ winner:"RCB",  s1:"203/5 (20)",  s2:"204/3 (19.1)", margin:"7 wkts",  battedFirst:"SRH"  }},
-  { id:2,  date:"Mar 29", team1:"MI",   team2:"KKR",  venue:"Wankhede Stadium, Mumbai",                      result:{ winner:"MI",   s1:"220/5 (20)",  s2:"221/4 (17.1)", margin:"6 wkts",  battedFirst:"KKR"  }},
-  { id:3,  date:"Mar 31", team1:"RR",   team2:"CSK",  venue:"ACA Cricket Stadium, Guwahati",                 result:{ winner:"RR",   s1:"186/4 (20)",  s2:"172/9 (20)",   margin:"14 runs", battedFirst:"RR"   }},
-  { id:4,  date:"Mar 31", team1:"PBKS", team2:"GT",   venue:"HPCA Stadium, Dharamshala",                     result:{ winner:"GT",   s1:"174/7 (20)",  s2:"175/3 (18.4)", margin:"7 wkts",  battedFirst:"PBKS" }},
-  { id:5,  date:"Apr 1",  team1:"LSG",  team2:"DC",   venue:"Ekana Cricket Stadium, Lucknow",                result:{ winner:"DC",   s1:"162/8 (20)",  s2:"163/4 (18.1)", margin:"6 wkts",  battedFirst:"LSG"  }},
-  { id:6,  date:"Apr 3",  team1:"KKR",  team2:"SRH",  venue:"Eden Gardens, Kolkata",                         result:{ winner:"SRH",  s1:"184/8 (20)",  s2:"185/4 (18.3)", margin:"6 wkts",  battedFirst:"KKR"  }},
-  { id:7,  date:"Apr 3",  team1:"CSK",  team2:"PBKS", venue:"MA Chidambaram Stadium, Chennai",               result:{ winner:"PBKS", s1:"191/5 (20)",  s2:"192/6 (19.4)", margin:"4 wkts",  battedFirst:"CSK"  }},
-  { id:8,  date:"Apr 4",  team1:"DC",   team2:"MI",   venue:"Arun Jaitley Stadium, Delhi",                   result:{ winner:"DC",   s1:"163/7 (20)",  s2:"164/4 (18.1)", margin:"6 wkts",  battedFirst:"MI"   }},
-  { id:9,  date:"Apr 4",  team1:"GT",   team2:"RR",   venue:"Narendra Modi Stadium, Ahmedabad",              result:{ winner:"GT",   s1:"168/7 (20)",  s2:"169/4 (18.2)", margin:"6 wkts",  battedFirst:"RR"   }},
-  { id:10, date:"Apr 5",  team1:"SRH",  team2:"LSG",  venue:"Rajiv Gandhi Intl. Cricket Stadium, Hyderabad", result:{ winner:"SRH",  s1:"195/4 (20)",  s2:"178/9 (20)",   margin:"17 runs", battedFirst:"SRH"  }},
-  { id:11, date:"Apr 5",  team1:"RCB",  team2:"CSK",  venue:"M. Chinnaswamy Stadium, Bengaluru",             result:{ winner:"RCB",  s1:"156/8 (20)",  s2:"158/3 (17.4)", margin:"7 wkts",  battedFirst:"CSK"  }},
-  { id:12, date:"Apr 6",  team1:"KKR",  team2:"PBKS", venue:"Eden Gardens, Kolkata",                         result:{ winner:"KKR",  s1:"187/6 (20)",  s2:"183/9 (20)",   margin:"4 runs",  battedFirst:"KKR"  }},
-  { id:13, date:"Apr 7",  team1:"RR",   team2:"MI",   venue:"Sawai Mansingh Stadium, Jaipur",                result:{ winner:"MI",   s1:"172/6 (20)",  s2:"173/5 (19.2)", margin:"5 wkts",  battedFirst:"RR"   }},
-  { id:14, date:"Apr 8",  team1:"DC",   team2:"GT",   venue:"Arun Jaitley Stadium, Delhi",                   result:{ winner:"DC",   s1:"161/8 (20)",  s2:"165/4 (18.1)", margin:"6 wkts",  battedFirst:"GT"   }},
-  { id:15, date:"Apr 9",  team1:"KKR",  team2:"LSG",  venue:"Eden Gardens, Kolkata",                         result:{ winner:"LSG",  s1:"178/7 (20)",  s2:"179/3 (17.5)", margin:"7 wkts",  battedFirst:"KKR"  }},
-  { id:16, date:"Apr 10", team1:"RR",   team2:"RCB",  venue:"Sawai Mansingh Stadium, Jaipur",                result:{ winner:"RCB",  s1:"182/5 (20)",  s2:"183/6 (19.3)", margin:"4 wkts",  battedFirst:"RR"   }},
-  { id:17, date:"Apr 11", team1:"PBKS", team2:"SRH",  venue:"HPCA Stadium, Dharamshala",                     result:{ winner:"SRH",  s1:"189/5 (20)",  s2:"190/4 (19.1)", margin:"6 wkts",  battedFirst:"PBKS" }},
-  { id:18, date:"Apr 11", team1:"CSK",  team2:"DC",   venue:"MA Chidambaram Stadium, Chennai",               result:{ winner:"CSK",  s1:"157/7 (20)",  s2:"161/4 (18.3)", margin:"6 wkts",  battedFirst:"DC"   }},
-  { id:19, date:"Apr 12", team1:"LSG",  team2:"GT",   venue:"Ekana Cricket Stadium, Lucknow",                result:{ winner:"GT",   s1:"175/6 (20)",  s2:"176/3 (17.4)", margin:"7 wkts",  battedFirst:"LSG"  }},
-  { id:20, date:"Apr 12", team1:"MI",   team2:"RCB",  venue:"Wankhede Stadium, Mumbai",                      result:{ winner:"MI",   s1:"201/4 (20)",  s2:"202/5 (19.2)", margin:"5 wkts",  battedFirst:"RCB"  }},
-  { id:21, date:"Apr 13", team1:"SRH",  team2:"RR",   venue:"Rajiv Gandhi Intl. Cricket Stadium, Hyderabad", result:{ winner:"SRH",  s1:"216/4 (20)",  s2:"198/8 (20)",   margin:"18 runs", battedFirst:"SRH"  }},
-  { id:22, date:"Apr 14", team1:"CSK",  team2:"KKR",  venue:"MA Chidambaram Stadium, Chennai",               result:{ winner:"CSK",  s1:"174/8 (20)",  s2:"178/4 (18.4)", margin:"6 wkts",  battedFirst:"KKR"  }},
-  { id:23, date:"Apr 15", team1:"RCB",  team2:"LSG",  venue:"M. Chinnaswamy Stadium, Bengaluru",             result:{ winner:"RCB",  s1:"168/9 (20)",  s2:"169/5 (17.1)", margin:"5 wkts",  battedFirst:"LSG"  }},
-  { id:24, date:"Apr 16", team1:"MI",   team2:"PBKS", venue:"Wankhede Stadium, Mumbai",                      result:{ winner:"MI",   s1:"193/5 (20)",  s2:"179/8 (20)",   margin:"14 runs", battedFirst:"MI"   }},
-  { id:25, date:"Apr 17", team1:"GT",   team2:"KKR",  venue:"Narendra Modi Stadium, Ahmedabad",              result:{ winner:"KKR",  s1:"171/7 (20)",  s2:"172/4 (18.2)", margin:"6 wkts",  battedFirst:"GT"   }},
-  { id:26, date:"Apr 18", team1:"RCB",  team2:"DC",   venue:"M. Chinnaswamy Stadium, Bengaluru",             result:{ winner:"DC",   s1:"196/4 (20)",  s2:"197/5 (19.3)", margin:"5 wkts",  battedFirst:"RCB"  }},
-  { id:27, date:"Apr 19", team1:"SRH",  team2:"CSK",  venue:"Rajiv Gandhi Intl. Cricket Stadium, Hyderabad", result:{ winner:"CSK",  s1:"167/9 (20)",  s2:"168/5 (18.2)", margin:"5 wkts",  battedFirst:"SRH"  }},
-  { id:28, date:"Apr 19", team1:"KKR",  team2:"RR",   venue:"Eden Gardens, Kolkata",                         result:{ winner:"RR",   s1:"181/6 (20)",  s2:"182/5 (18.4)", margin:"5 wkts",  battedFirst:"KKR"  }},
-  { id:29, date:"Apr 20", team1:"PBKS", team2:"LSG",  venue:"HPCA Stadium, Dharamshala",                     result:{ winner:"PBKS", s1:"163/7 (20)",  s2:"167/4 (18.3)", margin:"6 wkts",  battedFirst:"LSG"  }},
-  { id:30, date:"Apr 20", team1:"GT",   team2:"MI",   venue:"Narendra Modi Stadium, Ahmedabad",              result:{ winner:"MI",   s1:"178/6 (20)",  s2:"179/3 (17.3)", margin:"7 wkts",  battedFirst:"GT"   }},
+  // League stage (M1–M70)
+  { id:1,  date:"Mar 28", team1:"SRH",  team2:"RCB",  venue:"M. Chinnaswamy Stadium, Bengaluru",              result:{ winner:"RCB",  s1:"201/9 (20)",   s2:"203/4 (15.4)", margin:"6 wkts",     battedFirst:"SRH"  }},
+  { id:2,  date:"Mar 29", team1:"KKR",  team2:"MI",   venue:"Wankhede Stadium, Mumbai",                       result:{ winner:"MI",   s1:"220/4 (20)",   s2:"224/4 (19.1)", margin:"6 wkts",     battedFirst:"KKR"  }},
+  { id:3,  date:"Mar 30", team1:"CSK",  team2:"RR",   venue:"ACA Stadium, Guwahati",                          result:{ winner:"RR",   s1:"127/10 (19.4)",s2:"128/2 (12.1)", margin:"8 wkts",     battedFirst:"CSK"  }},
+  { id:4,  date:"Mar 31", team1:"GT",   team2:"PBKS", venue:"New International Cricket Stadium, New Chandigarh", result:{ winner:"PBKS", s1:"162/6 (20)",   s2:"165/7 (19.1)", margin:"3 wkts",     battedFirst:"GT"   }},
+  { id:5,  date:"Apr 1",  team1:"LSG",  team2:"DC",   venue:"Ekana Cricket Stadium, Lucknow",                 result:{ winner:"DC",   s1:"141/10 (18.4)",s2:"145/4 (17.1)", margin:"6 wkts",     battedFirst:"LSG"  }},
+  { id:6,  date:"Apr 2",  team1:"SRH",  team2:"KKR",  venue:"Eden Gardens, Kolkata",                          result:{ winner:"SRH",  s1:"226/8 (20)",   s2:"161/10 (16)", margin:"65 runs",    battedFirst:"SRH"  }},
+  { id:7,  date:"Apr 3",  team1:"CSK",  team2:"PBKS", venue:"MA Chidambaram Stadium, Chennai",                result:{ winner:"PBKS", s1:"209/5 (20)",   s2:"210/5 (18.4)", margin:"5 wkts",     battedFirst:"CSK"  }},
+  { id:8,  date:"Apr 4",  team1:"MI",   team2:"DC",   venue:"Arun Jaitley Stadium, Delhi",                    result:{ winner:"DC",   s1:"162/6 (20)",   s2:"164/4 (18.1)", margin:"6 wkts",     battedFirst:"MI"   }},
+  { id:9,  date:"Apr 4",  team1:"RR",   team2:"GT",   venue:"Narendra Modi Stadium, Ahmedabad",               result:{ winner:"RR",   s1:"210/6 (20)",   s2:"204/8 (20)",   margin:"6 runs",     battedFirst:"RR"   }},
+  { id:10, date:"Apr 5",  team1:"SRH",  team2:"LSG",  venue:"Rajiv Gandhi Intl. Cricket Stadium, Hyderabad",  result:{ winner:"LSG",  s1:"156/9 (20)",   s2:"160/5 (19.5)", margin:"5 wkts",     battedFirst:"SRH"  }},
+  { id:11, date:"Apr 5",  team1:"RCB",  team2:"CSK",  venue:"M. Chinnaswamy Stadium, Bengaluru",              result:{ winner:"RCB",  s1:"250/3 (20)",   s2:"207/10 (19.4)",margin:"43 runs",    battedFirst:"RCB"  }},
+  { id:12, date:"Apr 6",  team1:"KKR",  team2:"PBKS", venue:"Eden Gardens, Kolkata",                          result:null },
+  { id:13, date:"Apr 7",  team1:"RR",   team2:"MI",   venue:"ACA Stadium, Guwahati",                          result:{ winner:"RR",   s1:"150/3 (11)",   s2:"123/9 (11)",   margin:"27 runs",    battedFirst:"RR"   }},
+  { id:14, date:"Apr 8",  team1:"GT",   team2:"DC",   venue:"Arun Jaitley Stadium, Delhi",                    result:{ winner:"GT",   s1:"210/4 (20)",   s2:"209/8 (20)",   margin:"1 run",      battedFirst:"GT"   }},
+  { id:15, date:"Apr 9",  team1:"KKR",  team2:"LSG",  venue:"Eden Gardens, Kolkata",                          result:{ winner:"LSG",  s1:"181/4 (20)",   s2:"182/7 (20)",   margin:"3 wkts",     battedFirst:"KKR"  }},
+  { id:16, date:"Apr 10", team1:"RCB",  team2:"RR",   venue:"ACA Stadium, Guwahati",                          result:{ winner:"RR",   s1:"201/8 (20)",   s2:"202/4 (18)",   margin:"6 wkts",     battedFirst:"RCB"  }},
+  { id:17, date:"Apr 11", team1:"SRH",  team2:"PBKS", venue:"New International Cricket Stadium, New Chandigarh", result:{ winner:"PBKS", s1:"219/6 (20)",   s2:"223/4 (18.5)", margin:"6 wkts",     battedFirst:"SRH"  }},
+  { id:18, date:"Apr 11", team1:"CSK",  team2:"DC",   venue:"MA Chidambaram Stadium, Chennai",                result:{ winner:"CSK",  s1:"212/2 (20)",   s2:"189/10 (20)",  margin:"23 runs",    battedFirst:"CSK"  }},
+  { id:19, date:"Apr 12", team1:"LSG",  team2:"GT",   venue:"Ekana Cricket Stadium, Lucknow",                 result:{ winner:"GT",   s1:"164/8 (20)",   s2:"165/3 (18.4)", margin:"7 wkts",     battedFirst:"LSG"  }},
+  { id:20, date:"Apr 12", team1:"RCB",  team2:"MI",   venue:"Wankhede Stadium, Mumbai",                       result:{ winner:"RCB",  s1:"240/4 (20)",   s2:"222/5 (20)",   margin:"18 runs",    battedFirst:"RCB"  }},
+  { id:21, date:"Apr 13", team1:"SRH",  team2:"RR",   venue:"Rajiv Gandhi Intl. Cricket Stadium, Hyderabad",  result:{ winner:"SRH",  s1:"216/6 (20)",   s2:"159/10 (19)",  margin:"57 runs",    battedFirst:"SRH"  }},
+  { id:22, date:"Apr 14", team1:"CSK",  team2:"KKR",  venue:"MA Chidambaram Stadium, Chennai",                result:{ winner:"CSK",  s1:"192/5 (20)",   s2:"160/7 (20)",   margin:"32 runs",    battedFirst:"CSK"  }},
+  { id:23, date:"Apr 15", team1:"LSG",  team2:"RCB",  venue:"M. Chinnaswamy Stadium, Bengaluru",              result:{ winner:"RCB",  s1:"146/10 (20)",  s2:"149/5 (15.1)", margin:"5 wkts",     battedFirst:"LSG"  }},
+  { id:24, date:"Apr 16", team1:"MI",   team2:"PBKS", venue:"Wankhede Stadium, Mumbai",                       result:{ winner:"PBKS", s1:"195/6 (20)",   s2:"198/3 (16.3)", margin:"7 wkts",     battedFirst:"MI"   }},
+  { id:25, date:"Apr 17", team1:"KKR",  team2:"GT",   venue:"Narendra Modi Stadium, Ahmedabad",               result:{ winner:"GT",   s1:"180/10 (20)",  s2:"181/5 (19.4)", margin:"5 wkts",     battedFirst:"KKR"  }},
+  { id:26, date:"Apr 18", team1:"RCB",  team2:"DC",   venue:"M. Chinnaswamy Stadium, Bengaluru",              result:{ winner:"DC",   s1:"175/8 (20)",   s2:"179/4 (19.5)", margin:"6 wkts",     battedFirst:"RCB"  }},
+  { id:27, date:"Apr 18", team1:"SRH",  team2:"CSK",  venue:"Rajiv Gandhi Intl. Cricket Stadium, Hyderabad",  result:{ winner:"SRH",  s1:"194/9 (20)",   s2:"184/8 (20)",   margin:"10 runs",    battedFirst:"SRH"  }},
+  { id:28, date:"Apr 19", team1:"RR",   team2:"KKR",  venue:"Eden Gardens, Kolkata",                          result:{ winner:"KKR",  s1:"155/9 (20)",   s2:"161/6 (19.4)", margin:"4 wkts",     battedFirst:"RR"   }},
+  { id:29, date:"Apr 19", team1:"PBKS", team2:"LSG",  venue:"New International Cricket Stadium, New Chandigarh", result:{ winner:"PBKS", s1:"254/7 (20)",   s2:"200/5 (20)",   margin:"54 runs",    battedFirst:"PBKS" }},
+  { id:30, date:"Apr 20", team1:"MI",   team2:"GT",   venue:"Narendra Modi Stadium, Ahmedabad",               result:{ winner:"MI",   s1:"199/5 (20)",   s2:"100/10 (15.5)",margin:"99 runs",    battedFirst:"MI"   }},
+  { id:31, date:"Apr 21", team1:"SRH",  team2:"DC",   venue:"Rajiv Gandhi Intl. Cricket Stadium, Hyderabad",  result:{ winner:"SRH",  s1:"242/2 (20)",   s2:"195/9 (20)",   margin:"47 runs",    battedFirst:"SRH"  }},
+  { id:32, date:"Apr 22", team1:"RR",   team2:"LSG",  venue:"Ekana Cricket Stadium, Lucknow",                 result:{ winner:"RR",   s1:"159/6 (20)",   s2:"119/10 (18)",  margin:"40 runs",    battedFirst:"RR"   }},
+  { id:33, date:"Apr 23", team1:"CSK",  team2:"MI",   venue:"Wankhede Stadium, Mumbai",                       result:{ winner:"CSK",  s1:"207/6 (20)",   s2:"104/10 (19)",  margin:"103 runs",   battedFirst:"CSK"  }},
+  { id:34, date:"Apr 24", team1:"GT",   team2:"RCB",  venue:"M. Chinnaswamy Stadium, Bengaluru",              result:{ winner:"RCB",  s1:"205/3 (20)",   s2:"206/5 (18.5)", margin:"5 wkts",     battedFirst:"GT"   }},
+  { id:35, date:"Apr 25", team1:"DC",   team2:"PBKS", venue:"Arun Jaitley Stadium, Delhi",                    result:{ winner:"PBKS", s1:"264/2 (20)",   s2:"265/4 (18.5)", margin:"6 wkts",     battedFirst:"DC"   }},
+  { id:36, date:"Apr 25", team1:"RR",   team2:"SRH",  venue:"Sawai Mansingh Stadium, Jaipur",                 result:{ winner:"SRH",  s1:"228/6 (20)",   s2:"229/5 (18.3)", margin:"5 wkts",     battedFirst:"RR"   }},
+  { id:37, date:"Apr 26", team1:"CSK",  team2:"GT",   venue:"MA Chidambaram Stadium, Chennai",                result:{ winner:"GT",   s1:"158/7 (20)",   s2:"162/2 (16.4)", margin:"8 wkts",     battedFirst:"CSK"  }},
+  { id:38, date:"Apr 26", team1:"KKR",  team2:"LSG",  venue:"Ekana Cricket Stadium, Lucknow",                 result:{ winner:"KKR",  s1:"155/7 (20)",   s2:"155/8 (20)",   margin:"Super Over", battedFirst:"KKR"  }},
+  { id:39, date:"Apr 27", team1:"DC",   team2:"RCB",  venue:"Arun Jaitley Stadium, Delhi",                    result:{ winner:"RCB",  s1:"75/10 (16.3)", s2:"77/1 (6.3)",   margin:"9 wkts",     battedFirst:"DC"   }},
+  { id:40, date:"Apr 28", team1:"PBKS", team2:"RR",   venue:"New International Cricket Stadium, New Chandigarh", result:{ winner:"RR",   s1:"222/4 (20)",   s2:"228/4 (19.2)", margin:"6 wkts",     battedFirst:"PBKS" }},
+  { id:41, date:"Apr 29", team1:"MI",   team2:"SRH",  venue:"Wankhede Stadium, Mumbai",                       result:{ winner:"SRH",  s1:"243/5 (20)",   s2:"249/4 (18.4)", margin:"6 wkts",     battedFirst:"MI"   }},
+  { id:42, date:"Apr 30", team1:"RCB",  team2:"GT",   venue:"Narendra Modi Stadium, Ahmedabad",               result:{ winner:"GT",   s1:"155/10 (19.2)",s2:"158/6 (15.5)", margin:"4 wkts",     battedFirst:"RCB"  }},
+  { id:43, date:"May 1",  team1:"RR",   team2:"DC",   venue:"Sawai Mansingh Stadium, Jaipur",                 result:{ winner:"DC",   s1:"225/6 (20)",   s2:"226/3 (19.1)", margin:"7 wkts",     battedFirst:"RR"   }},
+  { id:44, date:"May 2",  team1:"MI",   team2:"CSK",  venue:"MA Chidambaram Stadium, Chennai",                result:{ winner:"CSK",  s1:"159/7 (20)",   s2:"160/2 (18.1)", margin:"8 wkts",     battedFirst:"MI"   }},
+  { id:45, date:"May 3",  team1:"SRH",  team2:"KKR",  venue:"Rajiv Gandhi Intl. Cricket Stadium, Hyderabad",  result:{ winner:"KKR",  s1:"165/10 (19)",  s2:"169/3 (18.2)", margin:"7 wkts",     battedFirst:"SRH"  }},
+  { id:46, date:"May 3",  team1:"PBKS", team2:"GT",   venue:"Narendra Modi Stadium, Ahmedabad",               result:{ winner:"GT",   s1:"163/9 (20)",   s2:"167/6 (19.5)", margin:"4 wkts",     battedFirst:"PBKS" }},
+  { id:47, date:"May 4",  team1:"LSG",  team2:"MI",   venue:"Wankhede Stadium, Mumbai",                       result:{ winner:"MI",   s1:"228/5 (20)",   s2:"229/4 (18.4)", margin:"6 wkts",     battedFirst:"LSG"  }},
+  { id:48, date:"May 5",  team1:"DC",   team2:"CSK",  venue:"Arun Jaitley Stadium, Delhi",                    result:{ winner:"CSK",  s1:"155/7 (20)",   s2:"159/2 (17.3)", margin:"8 wkts",     battedFirst:"DC"   }},
+  { id:49, date:"May 6",  team1:"SRH",  team2:"PBKS", venue:"Rajiv Gandhi Intl. Cricket Stadium, Hyderabad",  result:{ winner:"SRH",  s1:"235/4 (20)",   s2:"202/7 (20)",   margin:"33 runs",    battedFirst:"SRH"  }},
+  { id:50, date:"May 7",  team1:"LSG",  team2:"RCB",  venue:"Ekana Cricket Stadium, Lucknow",                 result:{ winner:"LSG",  s1:"209/3 (19)",   s2:"203/6 (19)",   margin:"9 runs (D/L)",battedFirst:"LSG" }},
+  { id:51, date:"May 8",  team1:"DC",   team2:"KKR",  venue:"Arun Jaitley Stadium, Delhi",                    result:{ winner:"KKR",  s1:"142/8 (20)",   s2:"147/2 (14.2)", margin:"8 wkts",     battedFirst:"DC"   }},
+  { id:52, date:"May 9",  team1:"GT",   team2:"RR",   venue:"Sawai Mansingh Stadium, Jaipur",                 result:{ winner:"GT",   s1:"229/4 (20)",   s2:"152/10 (16.3)",margin:"77 runs",    battedFirst:"GT"   }},
+  { id:53, date:"May 10", team1:"LSG",  team2:"CSK",  venue:"MA Chidambaram Stadium, Chennai",                result:{ winner:"CSK",  s1:"203/8 (20)",   s2:"208/5 (19.2)", margin:"5 wkts",     battedFirst:"LSG"  }},
+  { id:54, date:"May 10", team1:"MI",   team2:"RCB",  venue:"VSNIS Stadium, Raipur",                          result:{ winner:"RCB",  s1:"166/7 (20)",   s2:"167/8 (20)",   margin:"2 wkts",     battedFirst:"MI"   }},
+  { id:55, date:"May 11", team1:"PBKS", team2:"DC",   venue:"HPCA Stadium, Dharamshala",                      result:{ winner:"DC",   s1:"210/5 (20)",   s2:"216/7 (19)",   margin:"3 wkts",     battedFirst:"PBKS" }},
+  { id:56, date:"May 12", team1:"GT",   team2:"SRH",  venue:"Narendra Modi Stadium, Ahmedabad",               result:{ winner:"GT",   s1:"168/5 (20)",   s2:"86/10 (14.5)", margin:"82 runs",    battedFirst:"GT"   }},
+  { id:57, date:"May 13", team1:"KKR",  team2:"RCB",  venue:"VSNIS Stadium, Raipur",                          result:{ winner:"RCB",  s1:"192/4 (20)",   s2:"194/4 (19.1)", margin:"6 wkts",     battedFirst:"KKR"  }},
+  { id:58, date:"May 14", team1:"PBKS", team2:"MI",   venue:"HPCA Stadium, Dharamshala",                      result:{ winner:"MI",   s1:"200/8 (20)",   s2:"205/4 (19.5)", margin:"6 wkts",     battedFirst:"PBKS" }},
+  { id:59, date:"May 15", team1:"CSK",  team2:"LSG",  venue:"Ekana Cricket Stadium, Lucknow",                 result:{ winner:"LSG",  s1:"187/5 (20)",   s2:"188/3 (16.4)", margin:"7 wkts",     battedFirst:"CSK"  }},
+  { id:60, date:"May 16", team1:"KKR",  team2:"GT",   venue:"Eden Gardens, Kolkata",                          result:{ winner:"KKR",  s1:"247/2 (20)",   s2:"218/4 (20)",   margin:"29 runs",    battedFirst:"KKR"  }},
+  { id:61, date:"May 17", team1:"RCB",  team2:"PBKS", venue:"HPCA Stadium, Dharamshala",                      result:{ winner:"RCB",  s1:"222/4 (20)",   s2:"199/8 (20)",   margin:"23 runs",    battedFirst:"RCB"  }},
+  { id:62, date:"May 17", team1:"RR",   team2:"DC",   venue:"Arun Jaitley Stadium, Delhi",                    result:{ winner:"DC",   s1:"193/8 (20)",   s2:"197/5 (19.2)", margin:"5 wkts",     battedFirst:"RR"   }},
+  { id:63, date:"May 18", team1:"CSK",  team2:"SRH",  venue:"MA Chidambaram Stadium, Chennai",                result:{ winner:"SRH",  s1:"180/7 (20)",   s2:"181/5 (19)",   margin:"5 wkts",     battedFirst:"CSK"  }},
+  { id:64, date:"May 19", team1:"LSG",  team2:"RR",   venue:"Sawai Mansingh Stadium, Jaipur",                 result:{ winner:"RR",   s1:"220/5 (20)",   s2:"225/3 (19.1)", margin:"7 wkts",     battedFirst:"LSG"  }},
+  { id:65, date:"May 20", team1:"MI",   team2:"KKR",  venue:"Eden Gardens, Kolkata",                          result:{ winner:"KKR",  s1:"147/8 (20)",   s2:"148/6 (18.5)", margin:"4 wkts",     battedFirst:"MI"   }},
+  { id:66, date:"May 21", team1:"GT",   team2:"CSK",  venue:"Narendra Modi Stadium, Ahmedabad",               result:{ winner:"GT",   s1:"229/4 (20)",   s2:"140/10 (13.4)",margin:"89 runs",    battedFirst:"GT"   }},
+  { id:67, date:"May 22", team1:"SRH",  team2:"RCB",  venue:"Rajiv Gandhi Intl. Cricket Stadium, Hyderabad",  result:{ winner:"SRH",  s1:"255/4 (20)",   s2:"200/4 (20)",   margin:"55 runs",    battedFirst:"SRH"  }},
+  { id:68, date:"May 23", team1:"LSG",  team2:"PBKS", venue:"Ekana Cricket Stadium, Lucknow",                 result:{ winner:"PBKS", s1:"196/6 (20)",   s2:"200/3 (18)",   margin:"7 wkts",     battedFirst:"LSG"  }},
+  { id:69, date:"May 24", team1:"RR",   team2:"MI",   venue:"Wankhede Stadium, Mumbai",                       result:{ winner:"RR",   s1:"205/8 (20)",   s2:"175/9 (20)",   margin:"30 runs",    battedFirst:"RR"   }},
+  { id:70, date:"May 24", team1:"DC",   team2:"KKR",  venue:"Eden Gardens, Kolkata",                          result:{ winner:"DC",   s1:"203/5 (20)",   s2:"163/10 (18.4)",margin:"40 runs",    battedFirst:"DC"   }},
+  // Playoffs
+  { id:71, date:"May 26", team1:"RCB",  team2:"GT",   venue:"HPCA Stadium, Dharamshala",                      result:{ winner:"RCB",  s1:"254/5 (20)",   s2:"162/10 (19.3)",margin:"92 runs",    battedFirst:"RCB"  }, playoff:true },
+  { id:72, date:"May 27", team1:"RR",   team2:"SRH",  venue:"New International Cricket Stadium, New Chandigarh", result:{ winner:"RR",   s1:"243/8 (20)",   s2:"196/10 (19.2)",margin:"47 runs",    battedFirst:"RR"   }, playoff:true },
+  { id:73, date:"May 29", team1:"RR",   team2:"GT",   venue:"New International Cricket Stadium, New Chandigarh", result:{ winner:"GT",   s1:"214/6 (20)",   s2:"219/3 (18.4)", margin:"7 wkts",     battedFirst:"RR"   }, playoff:true },
+  { id:74, date:"May 31", team1:"GT",   team2:"RCB",  venue:"Narendra Modi Stadium, Ahmedabad",               result:null, playoff:true },
 ];
 
 const H2H_DATA = {
@@ -142,7 +188,7 @@ function computeStandings() {
     pts[t] = { team: t, p: 0, w: 0, l: 0, pts: 0, nrr: (seededRand(i) * 2 - 1).toFixed(3) };
   });
   SCHEDULE.forEach(m => {
-    if (!m.result) return;
+    if (!m.result || m.playoff) return;
     const w = m.result.winner;
     const l = w === m.team1 ? m.team2 : m.team1;
     pts[w].p++; pts[w].w++; pts[w].pts += 2;
@@ -576,7 +622,7 @@ function PointsTable() {
   const standings = useMemo(() => computeStandings(), []);
   return (
     <div>
-      <p style={{ ...S.muted, marginBottom: 18, fontSize: 12 }}>Updated after Match 30 · Apr 20, 2026 · Top 4 qualify for playoffs</p>
+      <p style={{ ...S.muted, marginBottom: 18, fontSize: 12 }}>League stage complete · May 24, 2026 · Top 4 qualified for playoffs</p>
       <div style={{ ...S.card, padding: 0, overflow: "hidden" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
           <thead>
@@ -639,7 +685,7 @@ export default function App() {
             <div style={S.logoText}>TATA IPL 2026</div>
             <div style={S.logoSub}>19th Edition · Mar 28 – May 31</div>
           </div>
-          <div style={S.badge}>🏆 RCB Defending</div>
+          <div style={S.badge}>🏆 Final: GT vs RCB · Live</div>
         </div>
       </div>
 
